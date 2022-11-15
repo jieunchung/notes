@@ -15,13 +15,43 @@ const Notes = () => {
     margin: "0 auto",
   };
 
- 
+  //when change happens on the input
+  const handleInput = (event) => {
+    setInputText(event.target.value);
+  };
 
+  //when saving the note
+  const saveNote = () => {
+    setNotes((prevNotes) => [...prevNotes, { id: nanoid(), text: inputText }]);
+    //clear the textarea
+    setInputText("");
+  };
+
+  //deleting the note
+  const deleteNote = (noteId) => {
+    setNotes((notes) =>
+      // only show if note.id and noteId does not match
+      notes.filter((note) => note.id !== noteId)
+    );
+  };
   return (
     <section style={grid}>
-      <Note />
-      <Note />
-      <CreateNote />
+      {notes &&
+        notes.map((note) => {
+          return (
+            <Note
+              key={note.id}
+              id={note.id}
+              text={note.text}
+              deleteNote={deleteNote}
+            />
+          );
+        })}
+      <CreateNote
+        handleInput={handleInput}
+        saveNote={saveNote}
+        inputText={inputText}
+      />
     </section>
   );
 };

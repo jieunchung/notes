@@ -1,7 +1,7 @@
 import React from "react";
 import { VscSave } from "react-icons/vsc";
 
-const CreateNote = () => {
+const CreateNote = ({ handleInput, saveNote, inputText }) => {
   const note = {
     background: "linear-gradient(to top, #dad4ec 0%, #dad4ec 1%, #f3e7e9 100%)",
     border: "1px solid #f1e6e9",
@@ -15,6 +15,8 @@ const CreateNote = () => {
   return (
     <section style={note}>
       <textarea
+        onChange={handleInput}
+        value={inputText}
         cols="10"
         row="5"
         placeholder="type something..."
@@ -26,7 +28,10 @@ const CreateNote = () => {
           resize: "none",
         }}
       />
-      <footer style={{ display: "flex", justifyContent: "flex-end" }}>
+      <footer
+        onClick={saveNote}
+        style={{ display: "flex", justifyContent: "flex-end" }}
+      >
         <VscSave />
       </footer>
     </section>
