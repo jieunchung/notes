@@ -4,7 +4,11 @@ import Notes from "./components/Notes";
 const App = () => {
   return (
     <main>
-      <h1 className="note__title">Notes</h1>
+      <h1
+        style={{ textAlign: "center", marginTop: "4rem", marginBottom: "4rem" }}
+      >
+        Notes
+      </h1>
       <Notes />
     </main>
   );

@@ -15,7 +15,13 @@ const Note = ({ id, text, deleteNote }) => {
   return (
     <section style={note}>
       <div style={{ height: "100%" }}>{text}</div>
-      <footer style={{ display: "flex", justifyContent: "flex-end" }}>
+      <footer
+        style={{
+          display: "flex",
+          justifyContent: "flex-end",
+          alignItems: "center",
+        }}
+      >
         <VscTrash
           onClick={() => {
             deleteNote(id);

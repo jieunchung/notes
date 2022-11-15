@@ -12,6 +12,9 @@ const CreateNote = ({ handleInput, saveNote, inputText }) => {
     flexDirection: "column",
   };
 
+  const limit = 200;
+  const limitCount = limit - inputText.length;
+
   return (
     <section style={note}>
       <textarea
@@ -20,7 +23,7 @@ const CreateNote = ({ handleInput, saveNote, inputText }) => {
         cols="10"
         row="5"
         placeholder="type something..."
-        maxLength={100}
+        maxLength={limit}
         style={{
           height: "100%",
           border: "none",
@@ -30,8 +33,15 @@ const CreateNote = ({ handleInput, saveNote, inputText }) => {
       />
       <footer
         onClick={saveNote}
-        style={{ display: "flex", justifyContent: "flex-end" }}
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+        }}
       >
+        <span style={{ fontSize: "0.9rem", color: "#757575" }}>
+          {limitCount} characters left
+        </span>
         <VscSave />
       </footer>
     </section>

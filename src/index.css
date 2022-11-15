@@ -1,9 +1,3 @@
-.note__title {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-  text-align: center;
-}
-
 textarea:focus {
   outline: none;
 }
