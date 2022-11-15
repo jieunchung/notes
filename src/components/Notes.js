@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Note from "./Note";
 import CreateNote from "./CreateNote";
 import { nanoid } from "nanoid";
 
 const Notes = () => {
-  const [notes, setNotes] = useState([]);
+  const [notes, setNotes] = useState(
+    () => JSON.parse(localStorage.getItem("notes")) || []
+  );
   const [inputText, setInputText] = useState("");
 
   const grid = {
@@ -34,6 +36,12 @@ const Notes = () => {
       notes.filter((note) => note.id !== noteId)
     );
   };
+
+  //save on localstorage
+  useEffect(() => {
+    localStorage.setItem("notes", JSON.stringify(notes));
+  }, [notes]);
+
   return (
     <section style={grid}>
       {notes &&
