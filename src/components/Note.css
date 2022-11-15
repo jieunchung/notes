@@ -1,0 +1,175 @@
+textarea:focus {
+  outline: none;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+footer:hover {
+  cursor: pointer;
+}
+
+.note__grid {
+  display: grid;
+  gap: 3rem;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.note {
+  transform: rotate(-0.9deg);
+  border: 1px solid #f1e6e9;
+  width: 15rem;
+  height: 15rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+}
+
+.note::before {
+  content: "";
+  width: 8rem;
+  min-height: 2rem;
+  background-color: #e2dada;
+  opacity: 50%;
+  position: absolute;
+  top: -6%;
+  left: 25%;
+  z-index: 2;
+  transform: skewX(-5deg);
+}
+
+.text {
+  height: 100%;
+  border: none;
+  background: none;
+  resize: none;
+  padding: 3rem 1rem 3rem 1rem;
+  text-align: center;
+  line-height: 1.5rem;
+  white-space: pre-line;
+  overflow: auto;
+  font-size: 0.9rem;
+}
+
+.text::-webkit-scrollbar {
+  width: 1px;
+}
+
+.text_limit {
+  font-size: 0.7rem;
+  color: #757575;
+}
+
+.note:nth-child(even) {
+  transform: rotate(2deg);
+}
+
+.note:nth-child(4n) {
+  transform: rotate(-3deg);
+}
+
+.note:hover {
+  scale: 1.2;
+  z-index: 5;
+  transform: rotate(0deg);
+}
+
+@media only screen and (max-width: 1400px) {
+  .note__grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .note__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .note:nth-child(3n) {
+    transform: rotate(2deg);
+  }
+  .note:hover {
+    transform: rotate(0deg);
+  }
+}
+
+@media only screen and (max-width: 660px) {
+  .note__grid {
+    gap: 1.5rem;
+  }
+  .note {
+    width: 12rem;
+    height: 12rem;
+    padding: 0.5rem;
+  }
+  .note::before {
+    width: 5rem;
+    min-height: 1.2rem;
+    top: -5%;
+    left: 25%;
+    z-index: 2;
+  }
+  .text {
+    font-size: 0.8rem;
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+  }
+  .text_limit {
+    font-size: 0.6rem !important;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .note {
+    width: 9rem;
+    height: 9rem;
+  }
+  .text {
+    font-size: 0.7rem;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    line-height: 1rem !important;
+  }
+  .text_limit {
+    font-size: 0.55rem !important;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .note {
+    width: 8rem;
+    height: 8rem;
+  }
+  .text {
+    font-size: 0.5rem;
+    padding-top: 2rem !important;
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+    line-height: 1rem !important;
+  }
+  .text_limit {
+    font-size: 0.5rem !important;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .note__grid {
+    grid-template-columns: 1fr;
+  }
+  .note {
+    width: 12rem;
+    height: 12rem;
+  }
+  .note:nth-child(3n) {
+    transform: rotate(-2deg);
+  }
+  .note:hover {
+    transform: rotate(0deg);
+  }
+  .text {
+    font-size: 0.7rem;
+  }
+}

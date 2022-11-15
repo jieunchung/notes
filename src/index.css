@@ -1,7 +1,43 @@
-textarea:focus {
-  outline: none;
+@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
+
+* {
+  font-family: "Permanent Marker", cursive;
 }
 
-footer:hover {
-  cursor: pointer;
+body {
+  /* background-color: #0d90aa; */
+  background-image: url(./images/concrete-wall-2.png);
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 94vw;
+  min-height: 100vh;
+}
+
+.note__tip {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+  align-self: flex-end;
+  transform: rotate(2deg);
+  opacity:80%
+}
+
+@media only screen and (max-width: 660px) {
+  .note__tip {
+    font-size: 1.5rem;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .note__tip {
+    font-size: 1.1rem;
+  }
+}
+@media only screen and (max-width: 320px) {
+  .note__tip {
+    font-size: 0.95rem;
+    text-align: right;
+  }
 }
