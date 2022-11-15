@@ -1,7 +1,7 @@
 import React from "react";
-import { VscTrash } from "react-icons/vsc";
+import { VscSave } from "react-icons/vsc";
 
-const Note = () => {
+const CreateNote = () => {
   const note = {
     background: "linear-gradient(to top, #dad4ec 0%, #dad4ec 1%, #f3e7e9 100%)",
     border: "1px solid #f1e6e9",
@@ -14,12 +14,23 @@ const Note = () => {
 
   return (
     <section style={note}>
-      <div style={{ height: "100%" }}>note</div>
+      <textarea
+        cols="10"
+        row="5"
+        placeholder="type something..."
+        maxLength={100}
+        style={{
+          height: "100%",
+          border: "none",
+          background: "none",
+          resize: "none",
+        }}
+      />
       <footer style={{ display: "flex", justifyContent: "flex-end" }}>
-        <VscTrash />
+        <VscSave />
       </footer>
     </section>
   );
 };
 
-export default Note;
+export default CreateNote;
