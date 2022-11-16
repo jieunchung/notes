@@ -19,7 +19,9 @@ const CreateNote = ({ handleInput, saveNote, inputText, color }) => {
       />
       <footer className="save__footer" onClick={saveNote}>
         <span className="text_limit">{limitCount} characters left</span>
-        <VscSave />
+        <span className="floppy">
+          <VscSave style={{ fontSize: "1.2rem" }} />
+        </span>
       </footer>
     </section>
   );
