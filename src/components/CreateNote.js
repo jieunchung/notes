@@ -7,7 +7,10 @@ const CreateNote = ({ handleInput, saveNote, inputText, color }) => {
   const limitCount = limit - inputText.length;
 
   return (
-    <section className="note" style={{ background: color }}>
+    <section
+      className="note"
+      style={{ background: color, position: "relative" }}
+    >
       <textarea
         className="text"
         onChange={handleInput}

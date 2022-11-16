@@ -53,8 +53,11 @@ footer:hover {
   grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
-.note {
+.notes {
   transform: rotate(-0.9deg);
+}
+
+.note {
   border: 1px solid #f1e6e9;
   width: 15rem;
   height: 15rem;
@@ -99,12 +102,12 @@ footer:hover {
   color: #757575;
 }
 
-.note:nth-child(even) {
+.notes:nth-child(even) {
   transform: rotate(2deg);
 }
 
-.note:nth-child(4n) {
-  transform: rotate(-3deg);
+.notes:nth-child(3n) {
+  transform: rotate(-1deg);
 }
 
 .note:hover {
@@ -141,10 +144,9 @@ footer:hover {
     padding: 0.5rem;
   }
   .note::before {
-    width: 5rem;
-    min-height: 1.2rem;
+    width: 6rem;
+    min-height: 1.5rem;
     top: -5%;
-    left: 25%;
     z-index: 2;
   }
   .text {
@@ -165,6 +167,10 @@ footer:hover {
     width: 16rem;
     height: 16rem;
   }
+  .note::before {
+    min-height: 2rem;
+    width: 8rem;
+  }
   .text {
     font-size: 0.9rem;
     padding-left: 1rem;
@@ -183,6 +189,10 @@ footer:hover {
   .note {
     width: 11rem;
     height: 11rem;
+  }
+  .note::before {
+    width: 6rem;
+    min-height: 1.5rem;
   }
   .text {
     font-size: 0.7rem;

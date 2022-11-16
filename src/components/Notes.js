@@ -69,13 +69,14 @@ const Notes = () => {
       {notes &&
         notes.map((note) => {
           return (
-            <Note
-              key={note.id}
-              id={note.id}
-              text={note.text}
-              deleteNote={deleteNote}
-              color={note.color}
-            />
+            <div className="notes" key={note.id}>
+              <Note
+                id={note.id}
+                text={note.text}
+                deleteNote={deleteNote}
+                color={note.color}
+              />
+            </div>
           );
         })}
     </section>
