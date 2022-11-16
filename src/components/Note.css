@@ -114,44 +114,30 @@ footer:hover {
   }
   .text {
     font-size: 0.8rem;
-    padding-left: 2rem !important;
-    padding-right: 2rem !important;
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
   .text_limit {
-    font-size: 0.6rem !important;
+    font-size: 0.6rem;
   }
 }
 
 @media only screen and (max-width: 500px) {
+  .note__grid {
+    grid-template-columns: 1fr;
+  }
   .note {
-    width: 9rem;
-    height: 9rem;
+    width: 16rem;
+    height: 16rem;
   }
   .text {
+    font-size: 0.9rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    line-height: 1.2rem;
+  }
+  .text_limit {
     font-size: 0.7rem;
-    padding-left: 1rem !important;
-    padding-right: 1rem !important;
-    line-height: 1rem !important;
-  }
-  .text_limit {
-    font-size: 0.55rem !important;
-  }
-}
-
-@media only screen and (max-width: 400px) {
-  .note {
-    width: 8rem;
-    height: 8rem;
-  }
-  .text {
-    font-size: 0.5rem;
-    padding-top: 2rem !important;
-    padding-left: 0.5rem !important;
-    padding-right: 0.5rem !important;
-    line-height: 1rem !important;
-  }
-  .text_limit {
-    font-size: 0.5rem !important;
   }
 }
 
@@ -160,16 +146,11 @@ footer:hover {
     grid-template-columns: 1fr;
   }
   .note {
-    width: 12rem;
-    height: 12rem;
-  }
-  .note:nth-child(3n) {
-    transform: rotate(-2deg);
-  }
-  .note:hover {
-    transform: rotate(0deg);
+    width: 11rem;
+    height: 11rem;
   }
   .text {
     font-size: 0.7rem;
+    line-height: 1rem;
   }
 }
